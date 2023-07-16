@@ -1,5 +1,5 @@
 # Neurocontroller-Based Reinforcement Learning (2023 Readme)
-Note: This tutorial is forked from the work of Kip Parker where his excellent write-up can be found here: https://towardsdatascience.com/building-a-neural-network-framework-in-c-16ef56ce1fef
+Note: Hi, Faisal from the year 2023 here, this tutorial is forked from the work of Kip Parker (2020) where his excellent write-up can be found here: https://towardsdatascience.com/building-a-neural-network-framework-in-c-16ef56ce1fef
 
 Kip has put together an example and I hope I can expand this further in the teaching lessons.
 
