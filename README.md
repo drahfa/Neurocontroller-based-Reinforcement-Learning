@@ -3,6 +3,8 @@ Note: Hi, Faisal from the year 2023 here, this tutorial is forked from the work 
 
 Kip has put together an example and I hope I can expand this further in the teaching lessons.
 
+I have made several edits in the project to make it more complete and streamlined. I've wrote some 2023 notes below, enjoy.
+
 ## What is a Neurocontroller?
 
 A neurocontroller is a type of controller in control systems that utilizes a neural network to manage the behavior of the system. Essentially, it's a control system whose decision-making structure is modeled after biological neural networks. The neurocontroller leverages the neural network's ability to learn from data, adapt to new scenarios, and handle complex, non-linear systems. It applies these capabilities to regulate and control dynamic systems, even in cases where the system's mathematical model is unknown or complex, making it highly valuable in a variety of real-world applications such as robotics, process control, and autonomous vehicles.
