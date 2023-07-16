@@ -3,7 +3,7 @@ Note: Hi, Faisal from the year 2023 here, this tutorial is forked from the work 
 
 Kip has put together an example and I hope I can expand this further in the teaching lessons.
 
-I have made several edits in the project to make it more complete and streamlined. I've wrote some 2023 notes below, enjoy.
+I have made several modifications and additional stuff (scenes, scripts, materials) to the project to make it more complete and streamlined. I've written some 2023 notes below, enjoy.
 
 ## What is a Neurocontroller?
 
