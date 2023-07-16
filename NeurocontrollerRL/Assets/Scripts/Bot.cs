@@ -9,6 +9,9 @@ public class Bot : MonoBehaviour
     public float rotation;//Rotation multiplier
     public LayerMask raycastMask;//Mask for the sensors
 
+    public Color gizmoColor = Color.red;
+    public RaycastHit hit;
+
     private float[] input = new float[5];//input to the neural network
     public NeuralNetwork network;
 
@@ -22,7 +25,7 @@ public class Bot : MonoBehaviour
             for (int i = 0; i < 5; i++)//draws five debug rays as inputs
             {
                 Vector3 newVector = Quaternion.AngleAxis(i * 45 - 90, new Vector3(0, 1, 0)) * transform.right;//calculating angle of raycast
-                RaycastHit hit;
+                //RaycastHit hit;
                 Ray Ray = new Ray(transform.position, newVector);
 
                 if (Physics.Raycast(Ray, out hit, 10, raycastMask))
@@ -33,6 +36,9 @@ public class Bot : MonoBehaviour
                 {
                     input[i] = 0;//if nothing is detected, will return 0 to network
                 }
+
+                Gizmos.color = gizmoColor;
+                Debug.DrawRay(transform.position, newVector * hit.distance, gizmoColor);
             }
 
             float[] output = network.FeedForward(input);//Call to network to feedforward
@@ -68,4 +74,6 @@ public class Bot : MonoBehaviour
     {
         network.fitness = position;//updates fitness of network for sorting
     }
+
+
 }

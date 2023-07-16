@@ -9,17 +9,22 @@ public class Manager : MonoBehaviour
     public int populationSize;//creates population size
     public GameObject prefab;//holds bot prefab
 
+    private float NumberOfGeneration = 1;
+
     public int[] layers = new int[3] { 5, 3, 2 };//initializing network to the right size
 
     [Range(0.0001f, 1f)] public float MutationChance = 0.01f;
 
     [Range(0f, 1f)] public float MutationStrength = 0.5f;
 
-    [Range(0.1f, 10f)] public float Gamespeed = 1f;
+    [Range(0.1f, 10f)] public float SimSpeed = 1f;
 
     //public List<Bot> Bots;
     public List<NeuralNetwork> networks;
     private List<Bot> cars;
+
+    [SerializeField]
+    public bool isLoadPreviousSave = true;
 
     void Start()// Start is called before the first frame update
     {
@@ -36,14 +41,24 @@ public class Manager : MonoBehaviour
         for (int i = 0; i < populationSize; i++)
         {
             NeuralNetwork net = new NeuralNetwork(layers);
-            net.Load("Assets/Pre-trained.txt");//on start load the network save
+
+            if (isLoadPreviousSave == true)
+            {
+                net.Load("Assets/Save.txt");
+            }
+            else if (isLoadPreviousSave == false)
+            {
+                net.Load("Assets/ModelSave.txt");
+            }
+
             networks.Add(net);
         }
     }
 
     public void CreateBots()
     {
-        Time.timeScale = Gamespeed;//sets gamespeed, which will increase to speed up training
+        Debug.Log("Number of Generation: " + NumberOfGeneration);
+        Time.timeScale = SimSpeed;//sets simulation speed, which will increase to speed up training
         if (cars != null)
         {
             for (int i = 0; i < cars.Count; i++)
@@ -61,6 +76,7 @@ public class Manager : MonoBehaviour
             car.network = networks[i];//deploys network to each learner
             cars.Add(car);
         }
+        NumberOfGeneration = NumberOfGeneration + 1;
         
     }
 
