@@ -1,4 +1,5 @@
-# C# neural network
+
+# C# neural network (2020 Readme)
 
 Neural network capable of forward passing and mutation driven learning
 
